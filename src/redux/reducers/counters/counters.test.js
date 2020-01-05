@@ -1,4 +1,4 @@
-import counters, { ADD_COUNTER, REMOVE_COUNTER, INCREMENT, DECREMENT } from './counters.component';
+import counters, { ADD_COUNTER, REMOVE_COUNTER, INCREMENT, DECREMENT, initialState } from './counters.component';
 import { expect } from 'chai';
 import deepFreeze from 'deep-freeze';
 
@@ -7,7 +7,7 @@ it('counters should be a function', () => {
 })
 
 it('should add a counter', () => {
-  const before = deepFreeze([]);
+  const before = deepFreeze(initialState);
   const action = deepFreeze({ type: ADD_COUNTER });
   const after = [0]
   expect(counters(before, action)).to.be.deep.equal(after);

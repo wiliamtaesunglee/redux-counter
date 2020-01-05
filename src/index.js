@@ -5,16 +5,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import Counters from './redux/reducers/counters/counters.component';
 
-const counterReducer = (state = 0, action) => {
-  switch(action.type) {
-    case 'INCREMENT': return state + 1;
-    case 'DECREMENT': return state - 1;
-    default: return state;
-  }
-};
-
-const store = createStore(counterReducer);
+const store = createStore(Counters);
 
 ReactDOM.render(
   <Provider store={store}>
